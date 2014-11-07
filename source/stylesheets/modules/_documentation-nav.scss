@@ -1,5 +1,35 @@
 #toc {
   @include span-columns(3);
+  height: 100vh;
+  overflow: scroll;
+  padding-right: 1.3em;
+}
+
+#search {
+  background: $washed-out-gray;
+  border-radius: $base-border-radius;
+  margin-bottom: 1em;
+  padding: .75em;
+}
+
+#st-search-input {
+  @extend input[type="search"];
+  @include fill-parent;
+  border: 1px solid $slate-gray;
+  margin-bottom: 0;
+  padding: 1em 1.9em;
+
+  &:focus, &:hover {
+    border: 1px solid $saturated-blue;
+  }
+
+  &:hover, &:active, &:focus {
+    box-shadow: none;
+  }
+
+  @include placeholder {
+    color: $translucent-gray;
+  }
 }
 
 .toc-block {
