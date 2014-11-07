@@ -38,8 +38,20 @@
 
 .docs-section-heading {
   margin-bottom: 0.6em;
+  font-size: $h5-font-size;
 }
 
 .doc-item {
-  margin-bottom: .65em;
+  border-bottom: 1px solid $base-border-color;
+
+  a {
+    color: $slate-gray;
+    padding: .75em .5em;
+    display: block;
+
+    &:hover {
+      @include transition(all, linear .5s);
+      background: $washed-out-gray;
+    }
+  }
 }
