@@ -5,7 +5,7 @@ en:
     docs: Docs
     logo: Middleman
   basics:
-    title: Middleman Basics
+    title: Basics
     blogging: Blogging
     build_deploy: Build & Deploy
     development_cycle: Development Cycle
@@ -19,7 +19,7 @@ en:
     templates: Templating Language
 
   advanced:
-    title: Advanced Features
+    title: Advanced
     asset_pipeline: Asset Pipeline
     configuration: Configuring Your Site
     custom_extensions: Custom Extensions
