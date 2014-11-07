@@ -1,15 +1,14 @@
 #toc {
   @include span-columns(3);
+  border-radius: $base-border-radius;
+  border: 1px solid darken($washed-out-gray, 8);
   height: 100vh;
   overflow: scroll;
-  padding-right: 1.3em;
+  padding: .75em;
 }
 
 #search {
-  background: $washed-out-gray;
-  border-radius: $base-border-radius;
   margin-bottom: 1em;
-  padding: .75em;
 }
 
 #st-search-input {
@@ -37,17 +36,22 @@
 }
 
 .docs-section-heading {
-  margin-bottom: 0.6em;
-  font-size: $h5-font-size;
+  color: $translucent-gray;
+  font-size: $base-font-size * .85;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: .75em .5em;
 }
 
 .doc-item {
-  border-bottom: 1px solid $base-border-color;
+  border-bottom: 1px dotted $base-border-color;
 
   a {
-    color: $slate-gray;
-    padding: .75em .5em;
+    color: darken($slate-gray, 20);
     display: block;
+    // margin: .4em 0;
+    padding: .34em .5em;
 
     &:hover {
       @include transition(all, linear .5s);

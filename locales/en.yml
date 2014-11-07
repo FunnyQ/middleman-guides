@@ -4,6 +4,8 @@ en:
     contribute: Contribute
     docs: Docs
     logo: Middleman
+    search_placeholder: Search the docs
+
   basics:
     title: Basics
     blogging: Blogging
@@ -52,8 +54,6 @@ en:
     github: GitHub Repository
     templates: Project Templates
 
-
-  # index
   index:
     sub_title: Hand-crafted frontend development
     headline: Build static websites <br> with an easy-to-use framework

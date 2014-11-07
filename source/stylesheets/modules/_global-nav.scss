@@ -2,7 +2,6 @@
   background-color: $golden-yellow;
   margin-bottom: 2em;
   padding: 1em 0;
-
 }
 
 .logo-text {
@@ -26,16 +25,16 @@
     &:hover {
       color: $top-nav-link-hover-color;
     }
-  }
-}
 
-a.cta-link {
-  border: 3px solid $top-nav-link-color;
-  border-radius: $base-border-radius;
-  padding: .35em .5em;
+    &.cta-link {
+      border: 3px solid $top-nav-link-color;
+      border-radius: $base-border-radius;
+      padding: .35em .5em;
 
-  &:hover {
-    background: white;
-    color: $base-accent-color;
+      &:hover {
+        background: white;
+        color: $base-accent-color;
+      }
+    }
   }
 }
