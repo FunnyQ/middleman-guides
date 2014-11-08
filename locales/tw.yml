@@ -1,0 +1,50 @@
+---
+tw:
+  # navigations
+  basics:
+    title: Middleman 的基礎
+    getting_started: 快速入門
+    templates: 樣板系統
+    template_helpers: 樣板輔助函式（Helper）
+    frontmatter: Frontmatter
+    dynamic_pages: 動態頁面
+    asset_pipeline: Asset Pipeline
+    pretty_urls: Pretty URLs (Directory Indexes URL 美化)
+    livereload: LiveReload
+    directory_structure: 目錄結構
+    blogging: Blog 功能
+
+  advanced:
+    title: 進階功能介紹
+    configuration: 詳細設定
+    local_data: Local Data
+    localization: 多國語系 (i18n)
+    sitemap: Sitemap
+    rack_middleware: Rack middleware
+    custom: 建立擴充功能
+    file_size_optimization: 檔案最佳化
+    improving_cacheability: 快取功能的改善
+
+  community:
+    title: 使用者社群
+    extensions: 擴充功能
+    templates: 專案樣板
+    deployment: 部署方法
+    forum: 社群討論區
+    github: GitHub Repository
+    built_using_middleman: 使用 Middleman 開發的網站
+
+
+  # index
+  index:
+    sub_title: 高效率的靜態網站製作工具
+    headline: 化繁為簡，極致效率
+    description: Middleman 整合了現代網頁開發的各式神器，讓靜態網站的開發流程更加輕鬆、有效率。
+    getting_started: 快速入門
+
+  # community/built-using-middleman
+  built:
+    title: 使用 Middleman 製作的網站
+    mobile: 使用 Middleman 製作的行動應用網站
+    blog: 使用 Middleman 製作的部落格
+    fork: 透過 Github fork 來加入你的網站！
