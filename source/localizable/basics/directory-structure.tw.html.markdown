@@ -1,10 +1,10 @@
 ---
-title: ディレクトリ構造
+title: 目錄結構
 ---
 
-# ディレクトリ構造
+# 目錄結構
 
-デフォルトの Middleman インストールではディレクトリ構造は次のようになります:
+在預設的情形下，Middleman 所生成的目錄結構會像下面這個樣子：
 
 ``` ruby
 mymiddlemansite/
@@ -26,23 +26,23 @@ mymiddlemansite/
         +-- normalize.css
 ```
 
-## 主要なディレクトリ
+## 主要的資料夾
 
-Middleman は特定の目的のために `source`, `build`, `data` と `lib` ディレクトリを利用します。各ディレクトリは Middleman のルートディレクトリに存在します。
+Middleman 針對特定不同的目的，會使用到 `source`、`build`、`data` 和 `lib` 等資料夾。每個資料夾會存在於 Middleman 專案的根目錄。
 
-### source ディレクトリ
+### source 資料夾
 
-`source` ディレクトリには利用するテンプレートの JavaScript, CSS や画像を含む, ビルドされる web サイトのソースファイルが置かれます。
+`source` 資料夾會用來存放頁面樣板的 JavaScript、CSS、以及圖像等，最後會編譯成靜態網站的原始碼。
 
-### build ディレクトリ
+### build 資料夾
 
-`build` ディレクトリは静的サイトのファイルがコンパイルされ出力されるディレクトリです。
+`build` 資料夾會用來存放編譯後所輸出的靜態檔案。
 
-### data ディレクトリ
+### data 資料夾
 
-ローカルデータ機能によって `data` ディレクトリの中に `.yml`, `.yaml` または `.json` ファイルを作成し, これらのファイルの情報をテンプレートの中で利用することができます。`data` フォルダはプロジェクトの `source` フォルダと同じように, プロジェクトのルートに置かれるべきです。詳細については [ローカルデータ](/jp/advanced/local-data/) を確認してください。
+Local Data 功能所需要的 `.yml`、`.yaml` 或是 `.json` 檔案，都必須存放在 `data` 資料夾中，這些檔案將能夠在頁面樣板中透過 Local Data 功能依需求取用。這個 `data` 資料夾必須存在於專案的跟目錄，與 `source` 同一個階層，才能正常運作。詳細請參考 [Local Data](/tw/advanced/local-data/) 文件內容。
 
-### lib ディレクトリ
+### lib 資料夾
 
-`lib` ディレクトリには, アプリケーションを構築するための [テンプレートヘルパ](/jp/basics/helpers/) を含む外部 Ruby モジュールを配置することができます。Rails を利用されているのであれば, この配置方法は同じです。
+`lib` 資料夾是用來存放額外自行擴充 Ruby module，包含 [樣板輔助函式（Helper）](/tw/basics/helpers/)等開發應用過程中會用到的自訂擴充函式庫。若你曾經使用過 Rails 的話，應該會對這樣的配置方式很熟悉。
 
