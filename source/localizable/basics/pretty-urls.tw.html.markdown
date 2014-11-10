@@ -1,63 +1,61 @@
 ---
-title: きれいな URL (ディレクトリインデックス)
+title: Pretty URLs (Directory Indexes URL 美化)
 ---
 
-# きれいな URL (ディレクトリインデックス)
+# Pretty URLs (Directory Indexes URL 美化)
 
-デフォルト設定では Middleman はプロジェクトの中であなたが記述したとおり正確にファイルを出力します。例えば `source` フォルダの中の `about-us.html.erb` ファイルはプロジェクトのビルド時に `about-us.html` として出力されます。 `example.com` の Web サーバのルートディレクトリにプロジェクトを配置すれば, このページは次の URL でアクセスできます: `http://example.com/about-us.html`
+在預設的情形下，Middleman 會依照你在專案中的描述正確地輸出相對應的檔案。舉例來說 `source` 資料夾中若有一個檔案叫做 `about-us.html.erb`，那麼在編譯輸出時就會產生一個檔案叫做 `about-us.html`。如果把這個網站放到網址為 `example.com` 的伺服器上，那麼這個頁面的存取網址將會是：`http://example.com/about-us.html`
 
-
-
-Middleman は `.html` 毎にフォルダを作り, そのフォルダの index としてテンプレートを出力するディレクトリインデックス拡張を提供します。`config.rb` で次のように指定します:
+Middleman 提供 Directory Indexes 的擴充功能，可以將每個 `.html` 獨立製作成一個資料夾，並將其內容輸出為該資料夾中的 index。想使用這樣的功能只需要在 `config.rb` 檔案中加入下面的描述即可：
 
 ``` ruby
 activate :directory_indexes
 ```
 
-このプロジェクトがビルドされた時,  `about-us.html.erb` ファイルは `about-us/index.html` として出力されます。"index ファイル" 対応の Web サーバに置かれた場合 (Apache や Amazon S3), このページは次の URL でアクセスできます:
+如此一來，這個專案在編譯輸出時，`about-us.html.erb` 檔案會被輸出為 `about-us/index.html` 的降世。將編譯後的檔案上傳到支援 "index files" 的伺服器（如 Apache 或 Amazon S3）時，存取這個頁面的網址將會像下面這樣：
 
 ``` ruby
 http://example.com/about-us
 ```
 
-別のファイル名で出力したい場合, `index_file` 変数が設定できます。例えば IIS では default.html が使用されます:
+若想要輸出成別的檔名，可以透過 `index_file` 變數來設定。例如，IIS 伺服器會需要使用 default.html，設定會像下面這樣：
 
 ``` ruby
 set :index_file, "default.html"
 ```
 
-もしくは PHP ファイルにしたい場合:
+若是希望輸出成 php 檔案的話：
 
 ``` ruby
 set :index_file, "index.php"
 ```
 
-#### アセットパスに関する注意事項
+#### 關於 assets 路徑的注意事項
 
-ディレクトリインデックスを有効化する場合, 画像ファイル名だけでアセットファイルの呼び出し (例: 画像ファイル) を行うと失敗します。次のように完全な抽象パスを使って呼び出す必要があります:
-
-``` ruby
-![すごい画像](/posts/2013-09-23-some-interesting-post/amazing-image.png)
-```
-
-わずかにこのプロセスを自動化するには, MarkDown をまずは ERB で作成します。例えば `/posts/2013-09-23-some-interesting-post.html.markdown.erb` ファイルがあるとします:
+開啟 Directory Indexes 功能的狀況下，僅單純使用檔名來存取 assets 將會發生錯誤（例如圖片）。我們將會需要使用絕對路徑來存取 assets。
 
 ``` ruby
-![すごい画像](<%= current_page.url %>some-image.png)
+![神奇圖片](/posts/2013-09-23-some-interesting-post/amazing-image.png)
 ```
 
-## オプトアウト
+若希望把這個過程自動化，可以讓 MardDown 先經過 ERb 處理。例如 `/posts/2013-09-23-some-interesting-post.html.markdown.erb` 中我們就可以使用下面的方法來存取 assets：
 
-自動的に名前を変更したくないページがある場合, 除外できます:
+``` ruby
+![神奇圖片](<%= current_page.url %>some-image.png)
+```
+
+## 排除例外
+
+若有些頁面我們不想使用 Directory Indexes 功能的話，可以透過下面的方式來排除：
 
 ``` ruby
 page "/i-really-want-the-extension.html", :directory_index => false
 ```
 
-1 度にたくさんのファイルのインデックスを無効化にしたい場合は, `page` には正規表現かファイルのパターンマッチを与えることができます。
+若想要一次排除多個檔案，`page` 也可以接受使用正規表示式。
 
-ページ毎に [YAML 形式の Frontmatter](/jp/basics/frontmatter/) に `directory_index: false` を追加することもできます。
+此外，在獨立的頁面樣板透過 [YAML 格式的 Frontmatter](/tw/basics/frontmatter/) 加入 `directory_index: false` 敘述，也可以達成相同的目的。
 
-## 手動インデックス
+## 手動 Indexes
 
-テンプレートのファイル名がすでに `index.html` の場合, Middleman は手をつけません。例えば, `my-page/index.html.erb` はあなたの予想どおり `my-page/index.html` としてビルドされます。
+頁面樣板的檔名原本就是 `index.html` 的情形下，Middleman 將不會對這個檔案進行處理。例如 `my-page/index.html.erb` 將會和你想的一樣，被輸出為 `my-page/index.html`。
